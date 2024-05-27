@@ -1,0 +1,118 @@
+@import url("reset.css");
+
+body {
+	background-color: #333;
+	color: #fff;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.page {
+	padding: 30px;
+}
+.catch {
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	position: relative;
+	background:
+		url("../img/photo_2024-05-27_10-58-42.jpg") 0 0 no-repeat,
+		#808e75 url("../img/photo_2024-05-27_10-59-09.jpg") right top no-repeat;
+}
+.catch-wolf {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -101px;
+	animation: catch 3s infinite linear alternate;
+}
+.catch-eggs {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.catch-eggs span {
+	position: absolute;
+	width: 30px;
+	height: 35px;
+	background-color: #fff;
+	border-radius: 50% 50% 48% 52% / 62% 57% 43% 38%;
+	animation: eggs-rotate 1s infinite linear;
+	top: 100px;
+}
+.catch-eggs span:nth-child(1) {
+	left: 0;
+	animation:
+		eggs-rotate 1s infinite linear,
+		eggs-go-left 1s linear forwards;
+}
+.catch-eggs span:nth-child(2) {
+	right: 0;
+	animation:
+		eggs-rotate 1s infinite linear,
+		eggs-go-right 1s linear 1.4s forwards;
+}
+.catch-eggs span:nth-child(3) {
+	left: 0;
+	animation:
+		eggs-rotate 1s infinite linear,
+		eggs-go-left 1s linear 2s forwards;
+}
+.catch-eggs span:nth-child(4) {
+	right: 0;
+	animation:
+		eggs-rotate 1s infinite linear,
+		eggs-go-right 1s linear 2.7s forwards;
+}
+
+@keyframes eggs-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes eggs-go-left {
+	0% {
+	}
+	90% {
+		left: 200px;
+		top: 200px;
+		opacity: 1;
+	}
+	100% {
+		left: 200px;
+		top: 200px;
+		opacity: 0;
+	}
+}
+@keyframes eggs-go-right {
+	0% {
+	}
+	90% {
+		right: 200px;
+		top: 200px;
+		opacity: 1;
+	}
+	100% {
+		right: 200px;
+		top: 200px;
+		opacity: 0;
+	}
+}
+@keyframes catch {
+	0% {
+		transform: scale(1);
+	}
+	30% {
+		transform: scale(-1, 1);
+	}
+	80% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(-1, 1);
+	}
+}
